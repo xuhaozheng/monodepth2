@@ -27,7 +27,7 @@ class scared_dataset(data.Dataset):
                  acquire_gt=False,
                  is_train=False,
                  img_ext='.jpg'):
-        super(mono_dataset, self).__init__()
+        super(scared_dataset, self).__init__()
 
         self.data_path = data_path
         self.filenames = filenames
