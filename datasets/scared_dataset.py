@@ -39,7 +39,7 @@ class scared_dataset(data.Dataset):
 
         self.frame_idxs = frame_idxs
 
-        self.istrain = istrain
+        self.is_train = is_train
         self.img_ext = img_ext
 
         self.loader = pil_loader
@@ -101,7 +101,7 @@ class scared_dataset(data.Dataset):
     def __getitem__(self, index):
         inputs = {}
 
-        do_color_aug = self.istrain and random.random() > 0.5
+        do_color_aug = self.is_train and random.random() > 0.5
 
         line = self.filenames[index].split()
         folder = line[0][62:]
