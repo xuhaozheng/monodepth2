@@ -25,7 +25,7 @@ class scared_dataset(data.Dataset):
                  frame_idxs,
                  num_scales,
                  acquire_gt,
-                 istrain=False,
+                 is_train=False,
                  img_ext='.jpg'):
         super(mono_dataset, self).__init__()
 
