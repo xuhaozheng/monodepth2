@@ -125,7 +125,8 @@ class scared_dataset(data.Dataset):
             K_inv = np.linalg.pinv(K)
 
             inputs[('K', scale)] = torch.from_numpy(K)
-            inputs[('K_inv'), scale] = torch.from_numpy(K_inv)
+            # inputs[('K_inv'), scale] = torch.from_numpy(K_inv)
+            inputs[('inv_K'), scale] = torch.from_numpy(K_inv)
         
         if do_color_aug:
             color_aug = transforms.ColorJitter(
