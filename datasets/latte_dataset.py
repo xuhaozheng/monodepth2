@@ -110,7 +110,7 @@ class latte_dataset(data.Dataset):
         for i in self.frame_idxs:
             if i == "s":
                 other_side = {"r": "l", "l": "r"}[side]
-                inputs[("color", i, -1)] = self.get_color(folder, other_side, frame_idx)
+                inputs[("color", i, -1)] = self.get_color(folder, frame_idx, other_side)
             else:
                 if self.acquire_gt == True:
                     inputs[("gt_depth")] = self.get_depth(folder, frame_idx, side)
