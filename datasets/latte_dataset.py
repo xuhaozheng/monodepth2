@@ -45,8 +45,8 @@ class latte_dataset(data.Dataset):
 
         self.loader = pil_loader
         self.to_tensor = transforms.ToTensor()
-        self.K = np.array([[0.9285097, 0, 0.50113267, 0],
-                           [0, 1.1606371, 0.5078349, 0],
+        self.K = np.array([[6.42651309,0,         1.12876772, 0],
+                           [0,         8.55005654, 0.74843954, 0],
                            [0, 0, 1, 0],
                            [0, 0, 0, 1]], dtype=np.float32)
 

@@ -86,7 +86,7 @@ class MonodepthOptions:
                                  nargs="+",
                                  type=int,
                                  help="frames to load",
-                                 default=[0])
+                                 default=[0,1,-1])
 
         # OPTIMIZATION options
         self.parser.add_argument("--batch_size",
