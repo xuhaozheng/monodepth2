@@ -44,8 +44,8 @@ class MonodepthOptions:
         self.parser.add_argument("--dataset",
                                  type=str,
                                  help="dataset to train on",
-                                 default="scared",
-                                 choices=["kitti", "kitti_odom", "kitti_depth", "kitti_test", "scared"])
+                                 default="latte",
+                                 choices=["kitti", "kitti_odom", "kitti_depth", "kitti_test", "scared", "latte"])
         self.parser.add_argument("--png",
                                  help="if set, trains from raw KITTI png files (instead of jpgs)",
                                  action="store_true")
@@ -77,11 +77,16 @@ class MonodepthOptions:
         self.parser.add_argument("--use_stereo",
                                  help="if set, uses stereo pair for training",
                                  action="store_true")
+     #    self.parser.add_argument("--frame_ids",
+     #                             nargs="+",
+     #                             type=int,
+     #                             help="frames to load",
+     #                             default=[0, -1, 1])
         self.parser.add_argument("--frame_ids",
                                  nargs="+",
                                  type=int,
                                  help="frames to load",
-                                 default=[0, -1, 1])
+                                 default=[0])
 
         # OPTIMIZATION options
         self.parser.add_argument("--batch_size",
