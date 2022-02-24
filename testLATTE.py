@@ -44,19 +44,19 @@ def test(self):
         errors = []
         ABE = []
         SCALE = []
-        baseline = 4.2    # 5.045158438885819
-        focal = 1135    # # 7866.0520212773545
+        baseline = 5.045158438885819   # 5.045158438885819
+        focal = 7866.0520212773545    # # 7866.0520212773545
         transform_resize = transforms.Resize((256, 320))
         with torch.no_grad():
-            ground_truth_dir = os.path.join(file_dir, "Data/test/depth")
-            test_data_dir = os.path.join(file_dir, "Data/test/image")
-            image02_file = os.path.join(ground_truth_dir, 'image_02')
-            image03_file = os.path.join(ground_truth_dir, 'image_03')
+            ground_truth_dir = os.path.join(file_dir, "test/depth")
+            test_data_dir = os.path.join(file_dir, "test/image")
+            image02_file = os.path.join(ground_truth_dir, 'left')
+            image03_file = os.path.join(ground_truth_dir, 'right')
             for image in sorted(os.listdir(image02_file)):
                 ground_truth_image_file_left = os.path.join(image02_file, image)
                 ground_truth_image_file_right = os.path.join(image03_file, image)
-                test_RGB_image_file_left = os.path.join(test_data_dir, 'image_02', image)
-                test_RGB_image_file_right = os.path.join(test_data_dir, 'image_03', image)
+                test_RGB_image_file_left = os.path.join(test_data_dir, 'left', image)
+                test_RGB_image_file_right = os.path.join(test_data_dir, 'right', image)
 
                 if not os.path.exists(ground_truth_image_file_left) and os.path.exists(
                         test_RGB_image_file_left):
